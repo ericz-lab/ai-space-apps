@@ -1,0 +1,6 @@
+node_modules/
+*.spaceapp
+*.pem
+!publishers/*.pem
+.env
+.DS_Store

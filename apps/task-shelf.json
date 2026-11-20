@@ -1,0 +1,30 @@
+{
+  "name": "task-shelf",
+  "publisher": "ericz-lab",
+  "title": {
+    "en": "Task Shelf",
+    "zh": "定时任务收纳"
+  },
+  "description": {
+    "en": "A home for small scheduled jobs that have no app of their own: add, edit, pause, resume and run them by hand or by asking the AI assistant. The Space's scheduler runs them.",
+    "zh": "收纳没有自己界面的零散定时任务：新建、修改、暂停、恢复、立即运行，可以手动，也可以交给 AI 助手；运行由 Space 的调度器负责。"
+  },
+  "icon": "icons/task-shelf.png",
+  "repo": "https://github.com/ericz-lab/task-shelf",
+  "license": "MIT",
+  "recommended": true,
+  "needs": [
+    "operator",
+    "model"
+  ],
+  "online": [
+    {
+      "en": "The AI assistant and AI jobs need a model",
+      "zh": "AI 助手和 AI 任务需要模型"
+    },
+    {
+      "en": "Jobs on other machines need their peers",
+      "zh": "其他机器上的任务需要 peer 在线"
+    }
+  ]
+}

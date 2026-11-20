@@ -1,0 +1,11 @@
+{
+  "name": "ai-space-apps",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "bun scripts/build.ts",
+    "check": "bun scripts/build.ts --check && bun scripts/validate.ts && bun test",
+    "validate": "bun scripts/validate.ts --fetch"
+  }
+}

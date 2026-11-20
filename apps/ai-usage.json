@@ -1,0 +1,25 @@
+{
+  "name": "ai-usage",
+  "publisher": "ericz-lab",
+  "title": {
+    "en": "AI Usage",
+    "zh": "AI 用量"
+  },
+  "description": {
+    "en": "What Claude Code, Codex and DeepSeek Harness spent on this machine and its peers, read from each tool's own session logs: tokens, cost estimates, models, projects, sessions and subagents.",
+    "zh": "本机和 peer 机器上 Claude Code、Codex 和 DeepSeek Harness 的消耗，直接从各自的会话记录统计：Token、估算费用、模型、项目、会话和子智能体。"
+  },
+  "icon": "icons/ai-usage.png",
+  "repo": "https://github.com/ericz-lab/ai-usage",
+  "license": "MIT",
+  "recommended": true,
+  "needs": [
+    "agent-logs"
+  ],
+  "online": [
+    {
+      "en": "Peer machines' usage needs the peers",
+      "zh": "peer 机器的用量需要 peer 在线"
+    }
+  ]
+}

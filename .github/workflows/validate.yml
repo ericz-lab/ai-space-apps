@@ -1,0 +1,28 @@
+name: validate
+
+# Every pull request and push: catalog.json is what publishers/ and apps/ make, it is a catalog a
+# Space accepts, and every released package downloads with the catalog's checksum, is the app and
+# version its entry says and is signed by its publisher. The weekly run notices a moved or replaced
+# release asset.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.0
+      - run: bun run check
+      - run: bun run validate

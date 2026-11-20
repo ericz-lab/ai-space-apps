@@ -1,0 +1,25 @@
+{
+  "name": "ai-todo",
+  "publisher": "ericz-lab",
+  "title": {
+    "en": "Todo",
+    "zh": "AI 待办"
+  },
+  "description": {
+    "en": "A todo list with one AI entry that turns free text into tasks, changes the list on request and plans the day; a task can be handed to the AI to do.",
+    "zh": "一个 AI 入口的待办清单：随手写的一段话拆成带日期、优先级和标签的任务，一句话就能改清单或排今天的顺序；任务可以交给 AI 执行。"
+  },
+  "icon": "icons/ai-todo.png",
+  "repo": "https://github.com/ericz-lab/ai-todo",
+  "license": "MIT",
+  "recommended": true,
+  "needs": [
+    "model"
+  ],
+  "online": [
+    {
+      "en": "Reading free text and running tasks with AI need a model",
+      "zh": "AI 解析和执行需要模型"
+    }
+  ]
+}

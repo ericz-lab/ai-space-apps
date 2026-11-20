@@ -1,0 +1,29 @@
+{
+  "name": "space-ops",
+  "publisher": "ericz-lab",
+  "title": {
+    "en": "Space Ops",
+    "zh": "运维中心"
+  },
+  "description": {
+    "en": "Monitor services, tasks and data with reusable checks, incident evidence and peer visibility.",
+    "zh": "通用巡检、数据断言与故障追踪，统一查看本机及 peer 的运行状态。"
+  },
+  "icon": "icons/space-ops.png",
+  "repo": "https://github.com/ericz-lab/space-ops",
+  "license": "MIT",
+  "recommended": true,
+  "needs": [
+    "operator"
+  ],
+  "online": [
+    {
+      "en": "Peer machines",
+      "zh": "peer 机器"
+    },
+    {
+      "en": "AI diagnosis needs a model",
+      "zh": "AI 诊断需要模型"
+    }
+  ]
+}

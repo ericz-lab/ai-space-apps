@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ericz-lab/ai-space-apps/main/schema/catalog.schema.json",
+  "title": "ai-space app catalog, format 1",
+  "description": "What an ai-space Space reads to list, install and upgrade apps. scripts/lib.ts holds the same rules plus the key and digest checks a schema cannot express (a key ID is the SHA-256 of its public key's DER SPKI).",
+  "type": "object",
+  "required": [
+    "catalog",
+    "publishers",
+    "apps"
+  ],
+  "properties": {
+    "catalog": {
+      "const": 1
+    },
+    "publishers": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "$ref": "#/$defs/publisher"
+      }
+    },
+    "apps": {
+      "type": "array",
+      "maxItems": 1000,
+      "items": {
+        "$ref": "#/$defs/app"
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{0,63}$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "location": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048,
+      "description": "An https URL, or a path relative to catalog.json"
+    },
+    "localized": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "required": [
+            "en"
+          ],
+          "properties": {
+            "en": {
+              "type": "string",
+              "minLength": 1
+            },
+            "zh": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "package": {
+      "type": "object",
+      "required": [
+        "url",
+        "sha256"
+      ],
+      "properties": {
+        "url": {
+          "$ref": "#/$defs/location"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "publisher": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "keyId",
+        "publicKey"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://"
+        },
+        "keyId": {
+          "$ref": "#/$defs/sha256"
+        },
+        "publicKey": {
+          "type": "string",
+          "pattern": "^-----BEGIN PUBLIC KEY-----",
+          "description": "Ed25519 public key, PEM (SPKI)"
+        }
+      }
+    },
+    "app": {
+      "type": "object",
+      "required": [
+        "name",
+        "publisher",
+        "title",
+        "description",
+        "repo",
+        "license"
+      ],
+      "properties": {
+        "name": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "not": {
+                "const": "space"
+              }
+            }
+          ]
+        },
+        "publisher": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "$ref": "#/$defs/localized"
+        },
+        "description": {
+          "$ref": "#/$defs/localized"
+        },
+        "icon": {
+          "$ref": "#/$defs/location"
+        },
+        "repo": {
+          "type": "string",
+          "pattern": "^https://"
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "recommended": {
+          "type": "boolean"
+        },
+        "needs": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "enum": [
+              "model",
+              "agent-logs",
+              "operator",
+              "s3",
+              "git"
+            ]
+          }
+        },
+        "online": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "$ref": "#/$defs/localized"
+          }
+        },
+        "latest": {
+          "type": "object",
+          "required": [
+            "version",
+            "tag",
+            "package",
+            "requires"
+          ],
+          "properties": {
+            "version": {
+              "$ref": "#/$defs/version"
+            },
+            "tag": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._/-]*$"
+            },
+            "package": {
+              "$ref": "#/$defs/package"
+            },
+            "sourcePackage": {
+              "$ref": "#/$defs/package"
+            },
+            "requires": {
+              "type": "object",
+              "required": [
+                "spaceApi"
+              ],
+              "properties": {
+                "spaceApi": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "bun": {
+                  "$ref": "#/$defs/version"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
