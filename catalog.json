@@ -1,5 +1,141 @@
 {
   "catalog": 1,
-  "publishers": [],
-  "apps": []
+  "publishers": [
+    {
+      "id": "ericz-lab",
+      "name": "ericz-lab",
+      "url": "https://github.com/ericz-lab",
+      "keyId": "a303acd260c502a942b6028e8e1a44ca33ce067aae5f26e5bb18641dc2b016fc",
+      "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA6R0AKvUI2opD/LjaMe732VZlUj6jQ2Q/ZKnF/W8mtnE=\n-----END PUBLIC KEY-----\n"
+    }
+  ],
+  "apps": [
+    {
+      "name": "ai-todo",
+      "publisher": "ericz-lab",
+      "title": {
+        "en": "Todo",
+        "zh": "AI 待办"
+      },
+      "description": {
+        "en": "A todo list with one AI entry that turns free text into tasks, changes the list on request and plans the day; a task can be handed to the AI to do.",
+        "zh": "一个 AI 入口的待办清单：随手写的一段话拆成带日期、优先级和标签的任务，一句话就能改清单或排今天的顺序；任务可以交给 AI 执行。"
+      },
+      "icon": "icons/ai-todo.png",
+      "repo": "https://github.com/ericz-lab/ai-todo",
+      "license": "MIT",
+      "recommended": true,
+      "needs": [
+        "model"
+      ],
+      "online": [
+        {
+          "en": "Reading free text and running tasks with AI need a model",
+          "zh": "AI 解析和执行需要模型"
+        }
+      ]
+    },
+    {
+      "name": "ai-usage",
+      "publisher": "ericz-lab",
+      "title": {
+        "en": "AI Usage",
+        "zh": "AI 用量"
+      },
+      "description": {
+        "en": "What Claude Code, Codex and DeepSeek Harness spent on this machine and its peers, read from each tool's own session logs: tokens, cost estimates, models, projects, sessions and subagents.",
+        "zh": "本机和 peer 机器上 Claude Code、Codex 和 DeepSeek Harness 的消耗，直接从各自的会话记录统计：Token、估算费用、模型、项目、会话和子智能体。"
+      },
+      "icon": "icons/ai-usage.png",
+      "repo": "https://github.com/ericz-lab/ai-usage",
+      "license": "MIT",
+      "recommended": true,
+      "needs": [
+        "agent-logs"
+      ],
+      "online": [
+        {
+          "en": "Peer machines' usage needs the peers",
+          "zh": "peer 机器的用量需要 peer 在线"
+        }
+      ]
+    },
+    {
+      "name": "dot-lib",
+      "publisher": "ericz-lab",
+      "title": {
+        "en": "Reading Room",
+        "zh": "点·藏书"
+      },
+      "description": {
+        "en": "A self-hosted e-book reader. Upload EPUB, PDF or MOBI files, then read, highlight and take notes in the browser.",
+        "zh": "自托管电子书阅读器：上传 EPUB / PDF / MOBI，在浏览器里阅读、划线、记笔记。"
+      },
+      "icon": "icons/dot-lib.svg",
+      "repo": "https://github.com/ericz-lab/dot-lib",
+      "license": "MIT",
+      "recommended": true,
+      "needs": [],
+      "online": []
+    },
+    {
+      "name": "space-ops",
+      "publisher": "ericz-lab",
+      "title": {
+        "en": "Space Ops",
+        "zh": "运维中心"
+      },
+      "description": {
+        "en": "Monitor services, tasks and data with reusable checks, incident evidence and peer visibility.",
+        "zh": "通用巡检、数据断言与故障追踪，统一查看本机及 peer 的运行状态。"
+      },
+      "icon": "icons/space-ops.png",
+      "repo": "https://github.com/ericz-lab/space-ops",
+      "license": "MIT",
+      "recommended": true,
+      "needs": [
+        "operator"
+      ],
+      "online": [
+        {
+          "en": "Peer machines",
+          "zh": "peer 机器"
+        },
+        {
+          "en": "AI diagnosis needs a model",
+          "zh": "AI 诊断需要模型"
+        }
+      ]
+    },
+    {
+      "name": "task-shelf",
+      "publisher": "ericz-lab",
+      "title": {
+        "en": "Task Shelf",
+        "zh": "定时任务收纳"
+      },
+      "description": {
+        "en": "A home for small scheduled jobs that have no app of their own: add, edit, pause, resume and run them by hand or by asking the AI assistant. The Space's scheduler runs them.",
+        "zh": "收纳没有自己界面的零散定时任务：新建、修改、暂停、恢复、立即运行，可以手动，也可以交给 AI 助手；运行由 Space 的调度器负责。"
+      },
+      "icon": "icons/task-shelf.png",
+      "repo": "https://github.com/ericz-lab/task-shelf",
+      "license": "MIT",
+      "recommended": true,
+      "needs": [
+        "operator",
+        "model"
+      ],
+      "online": [
+        {
+          "en": "The AI assistant and AI jobs need a model",
+          "zh": "AI 助手和 AI 任务需要模型"
+        },
+        {
+          "en": "Jobs on other machines need their peers",
+          "zh": "其他机器上的任务需要 peer 在线"
+        }
+      ]
+    }
+  ]
 }
