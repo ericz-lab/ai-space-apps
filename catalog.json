@@ -33,7 +33,23 @@
           "en": "Reading free text and running tasks with AI need a model",
           "zh": "AI 解析和执行需要模型"
         }
-      ]
+      ],
+      "latest": {
+        "version": "0.1.0",
+        "tag": "v0.1.0",
+        "package": {
+          "url": "https://github.com/ericz-lab/ai-todo/releases/download/v0.1.0/ai-todo-0.1.0.spaceapp",
+          "sha256": "016bf53a20f7459b65f6dceb95f6d6aba4ab92a767601579cde95537ec14550e"
+        },
+        "sourcePackage": {
+          "url": "https://github.com/ericz-lab/ai-todo/releases/download/v0.1.0/ai-todo-0.1.0-source.spaceapp",
+          "sha256": "2de25a8d48db0ef202c36304356dc7eed119a4fef59d07aa757f40fda09adbf9"
+        },
+        "requires": {
+          "spaceApi": 1,
+          "bun": "1.3.0"
+        }
+      }
     },
     {
       "name": "ai-usage",
@@ -51,14 +67,31 @@
       "license": "MIT",
       "recommended": true,
       "needs": [
-        "agent-logs"
+        "agent-logs",
+        "s3"
       ],
       "online": [
         {
           "en": "Peer machines' usage needs the peers",
           "zh": "peer 机器的用量需要 peer 在线"
         }
-      ]
+      ],
+      "latest": {
+        "version": "0.2.0",
+        "tag": "v0.2.0",
+        "package": {
+          "url": "https://github.com/ericz-lab/ai-usage/releases/download/v0.2.0/ai-usage-0.2.0.spaceapp",
+          "sha256": "c5d090066433b100a1e47e6a6ed8cc10fcdd8634b40f852776d1dd2bb8ac87e2"
+        },
+        "sourcePackage": {
+          "url": "https://github.com/ericz-lab/ai-usage/releases/download/v0.2.0/ai-usage-0.2.0-source.spaceapp",
+          "sha256": "c04e7d35c035512c63b3510486816b70546da043be4e4a296aa16dba5ba0760a"
+        },
+        "requires": {
+          "spaceApi": 1,
+          "bun": "1.3.0"
+        }
+      }
     },
     {
       "name": "dot-lib",
@@ -75,8 +108,26 @@
       "repo": "https://github.com/ericz-lab/dot-lib",
       "license": "MIT",
       "recommended": true,
-      "needs": [],
-      "online": []
+      "needs": [
+        "s3"
+      ],
+      "online": [],
+      "latest": {
+        "version": "1.0.0",
+        "tag": "v1.0.0",
+        "package": {
+          "url": "https://github.com/ericz-lab/dot-lib/releases/download/v1.0.0/dot-lib-1.0.0.spaceapp",
+          "sha256": "4053584deb5e38ca42dd519f26b0bfea63418d4986926e53068a2ca544cd77a5"
+        },
+        "sourcePackage": {
+          "url": "https://github.com/ericz-lab/dot-lib/releases/download/v1.0.0/dot-lib-1.0.0-source.spaceapp",
+          "sha256": "30d7907ca508d8cfd16b30729178ba87213ed6f4820f5f2927d4ca4c39aa41fa"
+        },
+        "requires": {
+          "spaceApi": 1,
+          "bun": "1.3.0"
+        }
+      }
     },
     {
       "name": "space-ops",
@@ -94,7 +145,8 @@
       "license": "MIT",
       "recommended": true,
       "needs": [
-        "operator"
+        "operator",
+        "model"
       ],
       "online": [
         {
@@ -105,7 +157,23 @@
           "en": "AI diagnosis needs a model",
           "zh": "AI 诊断需要模型"
         }
-      ]
+      ],
+      "latest": {
+        "version": "0.2.0",
+        "tag": "v0.2.0",
+        "package": {
+          "url": "https://github.com/ericz-lab/space-ops/releases/download/v0.2.0/space-ops-0.2.0.spaceapp",
+          "sha256": "b965f45a1fa80a5e1708edbeeba1220094fd99ed3240b2bd541d450a30f9352a"
+        },
+        "sourcePackage": {
+          "url": "https://github.com/ericz-lab/space-ops/releases/download/v0.2.0/space-ops-0.2.0-source.spaceapp",
+          "sha256": "78cb4b4ef56d9d8cf4ecd83b97ef8464500d00982b681ac0224ff1d15a06ac29"
+        },
+        "requires": {
+          "spaceApi": 1,
+          "bun": "1.3.0"
+        }
+      }
     },
     {
       "name": "task-shelf",
