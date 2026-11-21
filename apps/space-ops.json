@@ -14,7 +14,8 @@
   "license": "MIT",
   "recommended": true,
   "needs": [
-    "operator"
+    "operator",
+    "model"
   ],
   "online": [
     {
@@ -25,5 +26,21 @@
       "en": "AI diagnosis needs a model",
       "zh": "AI 诊断需要模型"
     }
-  ]
+  ],
+  "latest": {
+    "version": "0.2.0",
+    "tag": "v0.2.0",
+    "package": {
+      "url": "https://github.com/ericz-lab/space-ops/releases/download/v0.2.0/space-ops-0.2.0.spaceapp",
+      "sha256": "b965f45a1fa80a5e1708edbeeba1220094fd99ed3240b2bd541d450a30f9352a"
+    },
+    "sourcePackage": {
+      "url": "https://github.com/ericz-lab/space-ops/releases/download/v0.2.0/space-ops-0.2.0-source.spaceapp",
+      "sha256": "78cb4b4ef56d9d8cf4ecd83b97ef8464500d00982b681ac0224ff1d15a06ac29"
+    },
+    "requires": {
+      "spaceApi": 1,
+      "bun": "1.3.0"
+    }
+  }
 }
