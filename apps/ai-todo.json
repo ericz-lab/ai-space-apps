@@ -26,11 +26,11 @@
     "version": "0.1.0",
     "tag": "v0.1.0",
     "package": {
-      "url": "https://github.com/ericz-lab/ai-todo/releases/download/v0.1.0/ai-todo-0.1.0.spaceapp",
+      "url": "https://bucket.ai-space.me/store/packages/ai-todo/0.1.0/ai-todo-0.1.0.spaceapp",
       "sha256": "016bf53a20f7459b65f6dceb95f6d6aba4ab92a767601579cde95537ec14550e"
     },
     "sourcePackage": {
-      "url": "https://github.com/ericz-lab/ai-todo/releases/download/v0.1.0/ai-todo-0.1.0-source.spaceapp",
+      "url": "https://bucket.ai-space.me/store/packages/ai-todo/0.1.0/ai-todo-0.1.0-source.spaceapp",
       "sha256": "2de25a8d48db0ef202c36304356dc7eed119a4fef59d07aa757f40fda09adbf9"
     },
     "requires": {

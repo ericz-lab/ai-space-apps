@@ -31,11 +31,11 @@
     "version": "0.2.0",
     "tag": "v0.2.0",
     "package": {
-      "url": "https://github.com/ericz-lab/task-shelf/releases/download/v0.2.0/task-shelf-0.2.0.spaceapp",
+      "url": "https://bucket.ai-space.me/store/packages/task-shelf/0.2.0/task-shelf-0.2.0.spaceapp",
       "sha256": "de2d60e25e74591a1df580b8bce40a48052f58982f69941f4d27bba6eeb79141"
     },
     "sourcePackage": {
-      "url": "https://github.com/ericz-lab/task-shelf/releases/download/v0.2.0/task-shelf-0.2.0-source.spaceapp",
+      "url": "https://bucket.ai-space.me/store/packages/task-shelf/0.2.0/task-shelf-0.2.0-source.spaceapp",
       "sha256": "523d76c9b4d6512d482ca49c98ab6824e1681876539b81aa5c22cb52d28a55d2"
     },
     "requires": {

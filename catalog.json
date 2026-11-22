@@ -38,11 +38,11 @@
         "version": "0.1.0",
         "tag": "v0.1.0",
         "package": {
-          "url": "https://github.com/ericz-lab/ai-todo/releases/download/v0.1.0/ai-todo-0.1.0.spaceapp",
+          "url": "https://bucket.ai-space.me/store/packages/ai-todo/0.1.0/ai-todo-0.1.0.spaceapp",
           "sha256": "016bf53a20f7459b65f6dceb95f6d6aba4ab92a767601579cde95537ec14550e"
         },
         "sourcePackage": {
-          "url": "https://github.com/ericz-lab/ai-todo/releases/download/v0.1.0/ai-todo-0.1.0-source.spaceapp",
+          "url": "https://bucket.ai-space.me/store/packages/ai-todo/0.1.0/ai-todo-0.1.0-source.spaceapp",
           "sha256": "2de25a8d48db0ef202c36304356dc7eed119a4fef59d07aa757f40fda09adbf9"
         },
         "requires": {
@@ -80,11 +80,11 @@
         "version": "0.2.0",
         "tag": "v0.2.0",
         "package": {
-          "url": "https://github.com/ericz-lab/ai-usage/releases/download/v0.2.0/ai-usage-0.2.0.spaceapp",
+          "url": "https://bucket.ai-space.me/store/packages/ai-usage/0.2.0/ai-usage-0.2.0.spaceapp",
           "sha256": "c5d090066433b100a1e47e6a6ed8cc10fcdd8634b40f852776d1dd2bb8ac87e2"
         },
         "sourcePackage": {
-          "url": "https://github.com/ericz-lab/ai-usage/releases/download/v0.2.0/ai-usage-0.2.0-source.spaceapp",
+          "url": "https://bucket.ai-space.me/store/packages/ai-usage/0.2.0/ai-usage-0.2.0-source.spaceapp",
           "sha256": "c04e7d35c035512c63b3510486816b70546da043be4e4a296aa16dba5ba0760a"
         },
         "requires": {
@@ -116,11 +116,11 @@
         "version": "1.0.0",
         "tag": "v1.0.0",
         "package": {
-          "url": "https://github.com/ericz-lab/dot-lib/releases/download/v1.0.0/dot-lib-1.0.0.spaceapp",
+          "url": "https://bucket.ai-space.me/store/packages/dot-lib/1.0.0/dot-lib-1.0.0.spaceapp",
           "sha256": "4053584deb5e38ca42dd519f26b0bfea63418d4986926e53068a2ca544cd77a5"
         },
         "sourcePackage": {
-          "url": "https://github.com/ericz-lab/dot-lib/releases/download/v1.0.0/dot-lib-1.0.0-source.spaceapp",
+          "url": "https://bucket.ai-space.me/store/packages/dot-lib/1.0.0/dot-lib-1.0.0-source.spaceapp",
           "sha256": "30d7907ca508d8cfd16b30729178ba87213ed6f4820f5f2927d4ca4c39aa41fa"
         },
         "requires": {
@@ -162,11 +162,11 @@
         "version": "0.2.0",
         "tag": "v0.2.0",
         "package": {
-          "url": "https://github.com/ericz-lab/space-ops/releases/download/v0.2.0/space-ops-0.2.0.spaceapp",
+          "url": "https://bucket.ai-space.me/store/packages/space-ops/0.2.0/space-ops-0.2.0.spaceapp",
           "sha256": "b965f45a1fa80a5e1708edbeeba1220094fd99ed3240b2bd541d450a30f9352a"
         },
         "sourcePackage": {
-          "url": "https://github.com/ericz-lab/space-ops/releases/download/v0.2.0/space-ops-0.2.0-source.spaceapp",
+          "url": "https://bucket.ai-space.me/store/packages/space-ops/0.2.0/space-ops-0.2.0-source.spaceapp",
           "sha256": "78cb4b4ef56d9d8cf4ecd83b97ef8464500d00982b681ac0224ff1d15a06ac29"
         },
         "requires": {
@@ -208,11 +208,11 @@
         "version": "0.2.0",
         "tag": "v0.2.0",
         "package": {
-          "url": "https://github.com/ericz-lab/task-shelf/releases/download/v0.2.0/task-shelf-0.2.0.spaceapp",
+          "url": "https://bucket.ai-space.me/store/packages/task-shelf/0.2.0/task-shelf-0.2.0.spaceapp",
           "sha256": "de2d60e25e74591a1df580b8bce40a48052f58982f69941f4d27bba6eeb79141"
         },
         "sourcePackage": {
-          "url": "https://github.com/ericz-lab/task-shelf/releases/download/v0.2.0/task-shelf-0.2.0-source.spaceapp",
+          "url": "https://bucket.ai-space.me/store/packages/task-shelf/0.2.0/task-shelf-0.2.0-source.spaceapp",
           "sha256": "523d76c9b4d6512d482ca49c98ab6824e1681876539b81aa5c22cb52d28a55d2"
         },
         "requires": {

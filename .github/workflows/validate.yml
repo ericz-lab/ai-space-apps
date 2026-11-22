@@ -26,3 +26,33 @@ jobs:
           bun-version: 1.3.0
       - run: bun run check
       - run: bun run validate
+
+  # A catalog that passed the checks on main is what Spaces read: catalog.json goes to the store as
+  # store/index.json (https://ai-space.me/store/index.json), with the icons its entries point to.
+  # Packages are not uploaded here: they are already in the store when an entry names them, which
+  # the `check` job has just proved by downloading each one (see store-release.yml).
+  publish:
+    needs: check
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    concurrency: store-index
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: auto
+      AWS_EC2_METADATA_DISABLED: "true"
+      R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+      R2_BUCKET: ${{ vars.R2_BUCKET || 'ai-space-store' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload the icons and the catalog
+        run: |
+          test -n "$AWS_ACCESS_KEY_ID" || { echo "set the R2_ACCOUNT_ID, R2_ACCESS_KEY_ID and R2_SECRET_ACCESS_KEY secrets"; exit 1; }
+          aws s3 cp icons "s3://$R2_BUCKET/store/icons" --recursive --endpoint-url "$R2_ENDPOINT" --cache-control "public, max-age=300"
+          # Last, so that a catalog never names an icon that is not there yet.
+          aws s3 cp catalog.json "s3://$R2_BUCKET/store/index.json" --endpoint-url "$R2_ENDPOINT" \
+            --content-type application/json --cache-control "public, max-age=300"
+      - name: The store serves it
+        run: |
+          curl -fsS --retry 3 "https://bucket.ai-space.me/store/index.json?run=$GITHUB_RUN_ID" -o served.json
+          cmp served.json catalog.json
