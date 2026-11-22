@@ -1,0 +1,98 @@
+name: store-release
+
+# Put one release of a listed app into the store and propose it to the catalog:
+#
+#   1. download the release's packages from the app's GitHub release;
+#   2. check them as scripts/release-entry.ts does (the app, the version, the publisher's signature)
+#      and point apps/<app>.json at https://bucket.ai-space.me/store/packages/<app>/<version>/;
+#   3. upload them to the store under store/packages/<app>/<version>/. A file already there is
+#      never replaced: a version is an address, and a different file under it stops the run;
+#   4. open the pull request with the entry and catalog.json. Merging it publishes the catalog
+#      (validate.yml).
+#
+# Run it by hand (Actions → store-release → Run workflow) with the app's name and release tag.
+#
+# Secrets: R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY: an R2 API token that may read and
+# write objects in the store's bucket and nothing else. Variable: R2_BUCKET (default ai-space-store).
+# Opening the pull request needs "Allow GitHub Actions to create and approve pull requests"
+# (Settings → Actions → General).
+
+on:
+  workflow_dispatch:
+    inputs:
+      app:
+        description: "The app, as in apps/<app>.json"
+        required: true
+      tag:
+        description: "The release tag in the app's repository, v<version>"
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    concurrency: store-release-${{ inputs.app }}
+    env:
+      APP: ${{ inputs.app }}
+      TAG: ${{ inputs.tag }}
+      GH_TOKEN: ${{ github.token }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: auto
+      AWS_EC2_METADATA_DISABLED: "true"
+      R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+      R2_BUCKET: ${{ vars.R2_BUCKET || 'ai-space-store' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.0
+
+      - name: The release's packages
+        run: |
+          test -n "$AWS_ACCESS_KEY_ID" || { echo "set the R2_ACCOUNT_ID, R2_ACCESS_KEY_ID and R2_SECRET_ACCESS_KEY secrets"; exit 1; }
+          printf '%s' "$APP" | grep -Eq '^[a-z0-9][a-z0-9-]*$' || { echo "not an app name: $APP"; exit 1; }
+          printf '%s' "$TAG" | grep -Eq '^v[0-9A-Za-z.+-]+$' || { echo "not a release tag: $TAG"; exit 1; }
+          test -f "apps/$APP.json" || { echo "apps/$APP.json: list the app first"; exit 1; }
+          version=${TAG#v}
+          repo=$(bun -e "console.log(new URL((await Bun.file('apps/$APP.json').json()).repo).pathname.slice(1))")
+          mkdir -p "$RUNNER_TEMP/out"
+          gh release download "$TAG" --repo "$repo" --dir "$RUNNER_TEMP/out" --pattern "$APP-$version.spaceapp" --pattern "$APP-$version-source.spaceapp"
+          test -f "$RUNNER_TEMP/out/$APP-$version.spaceapp" || { echo "$repo $TAG has no $APP-$version.spaceapp"; exit 1; }
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+
+      - name: Check them and write the entry
+        run: |
+          out="$RUNNER_TEMP/out"
+          source_args=()
+          [ -f "$out/$APP-$VERSION-source.spaceapp" ] && source_args=(--source-package "$out/$APP-$VERSION-source.spaceapp")
+          bun scripts/release-entry.ts "$APP" --tag "$TAG" --package "$out/$APP-$VERSION.spaceapp" "${source_args[@]}" \
+            --base-url "https://bucket.ai-space.me/store/packages/$APP/$VERSION"
+          bun scripts/build.ts
+
+      - name: Upload them to the store
+        run: |
+          for file in "$RUNNER_TEMP"/out/*.spaceapp; do
+            key="store/packages/$APP/$VERSION/$(basename "$file")"
+            if aws s3api head-object --bucket "$R2_BUCKET" --key "$key" --endpoint-url "$R2_ENDPOINT" > /dev/null 2>&1; then
+              aws s3 cp "s3://$R2_BUCKET/$key" "$RUNNER_TEMP/there" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+              cmp "$file" "$RUNNER_TEMP/there" || { echo "$key is already in the store with other content; a released version is never replaced"; exit 1; }
+              echo "$key: already there"
+            else
+              aws s3 cp "$file" "s3://$R2_BUCKET/$key" --endpoint-url "$R2_ENDPOINT" --only-show-errors \
+                --content-type application/octet-stream --cache-control "public, max-age=31536000, immutable"
+              echo "$key: uploaded"
+            fi
+          done
+
+      - name: Propose it
+        run: |
+          if git diff --quiet; then echo "the catalog already names this release"; exit 0; fi
+          branch="store/$APP-$VERSION"
+          git checkout -q -b "$branch"
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qam "feat($APP): release $VERSION"
+          git push -q --force origin "$branch"
+          gh pr view "$branch" > /dev/null 2>&1 || gh pr create --head "$branch" --title "$APP $VERSION" --body "The release $TAG of $APP, with its packages in the store."

@@ -21,11 +21,11 @@
     "version": "1.0.0",
     "tag": "v1.0.0",
     "package": {
-      "url": "https://github.com/ericz-lab/dot-lib/releases/download/v1.0.0/dot-lib-1.0.0.spaceapp",
+      "url": "https://bucket.ai-space.me/store/packages/dot-lib/1.0.0/dot-lib-1.0.0.spaceapp",
       "sha256": "4053584deb5e38ca42dd519f26b0bfea63418d4986926e53068a2ca544cd77a5"
     },
     "sourcePackage": {
-      "url": "https://github.com/ericz-lab/dot-lib/releases/download/v1.0.0/dot-lib-1.0.0-source.spaceapp",
+      "url": "https://bucket.ai-space.me/store/packages/dot-lib/1.0.0/dot-lib-1.0.0-source.spaceapp",
       "sha256": "30d7907ca508d8cfd16b30729178ba87213ed6f4820f5f2927d4ca4c39aa41fa"
     },
     "requires": {

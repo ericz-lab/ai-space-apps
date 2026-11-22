@@ -27,11 +27,11 @@
     "version": "0.2.0",
     "tag": "v0.2.0",
     "package": {
-      "url": "https://github.com/ericz-lab/ai-usage/releases/download/v0.2.0/ai-usage-0.2.0.spaceapp",
+      "url": "https://bucket.ai-space.me/store/packages/ai-usage/0.2.0/ai-usage-0.2.0.spaceapp",
       "sha256": "c5d090066433b100a1e47e6a6ed8cc10fcdd8634b40f852776d1dd2bb8ac87e2"
     },
     "sourcePackage": {
-      "url": "https://github.com/ericz-lab/ai-usage/releases/download/v0.2.0/ai-usage-0.2.0-source.spaceapp",
+      "url": "https://bucket.ai-space.me/store/packages/ai-usage/0.2.0/ai-usage-0.2.0-source.spaceapp",
       "sha256": "c04e7d35c035512c63b3510486816b70546da043be4e4a296aa16dba5ba0760a"
     },
     "requires": {
