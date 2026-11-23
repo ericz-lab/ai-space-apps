@@ -23,15 +23,15 @@
     }
   ],
   "latest": {
-    "version": "0.2.0",
-    "tag": "v0.2.0",
+    "version": "0.2.1",
+    "tag": "v0.2.1",
     "package": {
-      "url": "https://bucket.ai-space.me/store/packages/ai-todo/0.2.0/ai-todo-0.2.0.spaceapp",
-      "sha256": "65baffb5110bd495b8e7c028b73b3a273f204a40625543cafc668566f68e4741"
+      "url": "https://bucket.ai-space.me/store/packages/ai-todo/0.2.1/ai-todo-0.2.1.spaceapp",
+      "sha256": "c09780ba437ef144bc47aee00a62421d73e535fcae4051df86edf65968cc7c07"
     },
     "sourcePackage": {
-      "url": "https://bucket.ai-space.me/store/packages/ai-todo/0.2.0/ai-todo-0.2.0-source.spaceapp",
-      "sha256": "03775715ecb6c30ee16fedbb398e13cf7782d49a250e98bf6d066777d7763b8c"
+      "url": "https://bucket.ai-space.me/store/packages/ai-todo/0.2.1/ai-todo-0.2.1-source.spaceapp",
+      "sha256": "82b310d17a0cb473287a62a394c1f373eaeaf6bb21558178f713e6a61a56c965"
     },
     "requires": {
       "spaceApi": 1,
