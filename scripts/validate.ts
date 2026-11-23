@@ -4,7 +4,7 @@
  * SHA-256 is the catalog's, that it is the app and version the entry says, and that it is signed
  * by the entry's publisher. Icons and repositories are fetched too.
  */
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
 import { parseCatalog, readPackage, sha256 } from "./lib.ts";
 
 const args = Bun.argv.slice(2);
@@ -22,9 +22,13 @@ for (const app of catalog.apps) {
   const publisher = catalog.publishers.find((p) => p.id === app.publisher)!;
   const repo = await fetch(app.repo, { method: "HEAD", redirect: "follow" }).catch(() => undefined);
   if (!repo?.ok) fail(`repository ${app.repo} does not answer`);
-  if (app.icon) {
-    const icon = await fetch(new URL(app.icon, base), { method: "HEAD" }).catch(() => undefined);
+  if (app.icon && /^https:\/\//.test(app.icon)) {
+    const icon = await fetch(app.icon, { method: "HEAD" }).catch(() => undefined);
     if (!icon?.ok) fail(`icon ${app.icon} does not answer`);
+  } else if (app.icon) {
+    // A relative icon is published from this checkout with the catalog (the store's publish job), so a new
+    // app's icon is not on main or the store before its pull request merges: check the file beside the catalog.
+    if (!(await Bun.file(resolve(dirname(path), app.icon)).exists())) fail(`icon ${app.icon} is not beside the catalog`);
   }
   if (!app.latest) { console.log("  no release yet"); continue; }
   for (const [variant, pkg] of [["package", app.latest.package], ["sourcePackage", app.latest.sourcePackage]] as const) {
