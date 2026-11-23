@@ -24,15 +24,15 @@
     }
   ],
   "latest": {
-    "version": "0.2.0",
-    "tag": "v0.2.0",
+    "version": "0.2.1",
+    "tag": "v0.2.1",
     "package": {
-      "url": "https://bucket.ai-space.me/store/packages/ai-usage/0.2.0/ai-usage-0.2.0.spaceapp",
-      "sha256": "c5d090066433b100a1e47e6a6ed8cc10fcdd8634b40f852776d1dd2bb8ac87e2"
+      "url": "https://bucket.ai-space.me/store/packages/ai-usage/0.2.1/ai-usage-0.2.1.spaceapp",
+      "sha256": "28c6b16dcafe2c3fa5141fd220c5c9117cd655400ddea9b00b10166ec69edebe"
     },
     "sourcePackage": {
-      "url": "https://bucket.ai-space.me/store/packages/ai-usage/0.2.0/ai-usage-0.2.0-source.spaceapp",
-      "sha256": "c04e7d35c035512c63b3510486816b70546da043be4e4a296aa16dba5ba0760a"
+      "url": "https://bucket.ai-space.me/store/packages/ai-usage/0.2.1/ai-usage-0.2.1-source.spaceapp",
+      "sha256": "5f66621b23b1103c1ad284f8ac1d840fa9868c333871844526226bc81e35441b"
     },
     "requires": {
       "spaceApi": 1,

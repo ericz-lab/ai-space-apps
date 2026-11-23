@@ -20,15 +20,15 @@
     }
   ],
   "latest": {
-    "version": "0.1.0",
-    "tag": "v0.1.0",
+    "version": "0.1.1",
+    "tag": "v0.1.1",
     "package": {
-      "url": "https://bucket.ai-space.me/store/packages/lan-drop/0.1.0/lan-drop-0.1.0.spaceapp",
-      "sha256": "b3b4bbd04892603224c98a46650db19399b71f72ff4a54bc8334d2310d49513d"
+      "url": "https://bucket.ai-space.me/store/packages/lan-drop/0.1.1/lan-drop-0.1.1.spaceapp",
+      "sha256": "f28f2122b392de32114c4a1ead2ed268285858f5d09e12a35051d3d463e1b250"
     },
     "sourcePackage": {
-      "url": "https://bucket.ai-space.me/store/packages/lan-drop/0.1.0/lan-drop-0.1.0-source.spaceapp",
-      "sha256": "c2d0b0cd6a532e1d1eef762d42b0ee4323d0098c4f9284354f20b118ca881c58"
+      "url": "https://bucket.ai-space.me/store/packages/lan-drop/0.1.1/lan-drop-0.1.1-source.spaceapp",
+      "sha256": "71cbe0f448b8a9ec54ca1b685b1046d692fac37e813aa33911843b15f5b93db4"
     },
     "requires": {
       "spaceApi": 1,

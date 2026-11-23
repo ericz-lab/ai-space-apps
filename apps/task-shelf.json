@@ -28,15 +28,15 @@
     }
   ],
   "latest": {
-    "version": "0.2.0",
-    "tag": "v0.2.0",
+    "version": "0.2.1",
+    "tag": "v0.2.1",
     "package": {
-      "url": "https://bucket.ai-space.me/store/packages/task-shelf/0.2.0/task-shelf-0.2.0.spaceapp",
-      "sha256": "de2d60e25e74591a1df580b8bce40a48052f58982f69941f4d27bba6eeb79141"
+      "url": "https://bucket.ai-space.me/store/packages/task-shelf/0.2.1/task-shelf-0.2.1.spaceapp",
+      "sha256": "e1c2939637f1bf0d5401134f50e57357bd234d1eca1d6cdb81d412be6140b7e0"
     },
     "sourcePackage": {
-      "url": "https://bucket.ai-space.me/store/packages/task-shelf/0.2.0/task-shelf-0.2.0-source.spaceapp",
-      "sha256": "523d76c9b4d6512d482ca49c98ab6824e1681876539b81aa5c22cb52d28a55d2"
+      "url": "https://bucket.ai-space.me/store/packages/task-shelf/0.2.1/task-shelf-0.2.1-source.spaceapp",
+      "sha256": "a14b11df6971bdd1d6702795e2d49ade5e6b9c2e7954459b2ccd3068e9343d61"
     },
     "requires": {
       "spaceApi": 1,
