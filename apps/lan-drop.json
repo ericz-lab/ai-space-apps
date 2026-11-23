@@ -23,11 +23,11 @@
     "version": "0.1.0",
     "tag": "v0.1.0",
     "package": {
-      "url": "https://github.com/ericz-lab/lan-drop/releases/download/v0.1.0/lan-drop-0.1.0.spaceapp",
+      "url": "https://bucket.ai-space.me/store/packages/lan-drop/0.1.0/lan-drop-0.1.0.spaceapp",
       "sha256": "b3b4bbd04892603224c98a46650db19399b71f72ff4a54bc8334d2310d49513d"
     },
     "sourcePackage": {
-      "url": "https://github.com/ericz-lab/lan-drop/releases/download/v0.1.0/lan-drop-0.1.0-source.spaceapp",
+      "url": "https://bucket.ai-space.me/store/packages/lan-drop/0.1.0/lan-drop-0.1.0-source.spaceapp",
       "sha256": "c2d0b0cd6a532e1d1eef762d42b0ee4323d0098c4f9284354f20b118ca881c58"
     },
     "requires": {
