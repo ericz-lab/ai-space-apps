@@ -220,6 +220,44 @@
           "bun": "1.3.0"
         }
       }
+    },
+    {
+      "name": "lan-drop",
+      "publisher": "ericz-lab",
+      "title": {
+        "en": "LAN Drop",
+        "zh": "局域网快传"
+      },
+      "description": {
+        "en": "Send files and text between phones and computers on the same Wi-Fi. Open the page on each device (or scan its QR code); devices see each other at once, and every transfer waits for the receiver to accept.",
+        "zh": "在同一个 Wi-Fi 里的手机和电脑之间互传文件和文字。每台设备打开这个页面（或扫二维码），就能互相看到；每次发送都要对方点\"接收\"。"
+      },
+      "icon": "icons/lan-drop.svg",
+      "repo": "https://github.com/ericz-lab/lan-drop",
+      "license": "MIT",
+      "needs": [],
+      "online": [
+        {
+          "en": "Opening the page from outside the local network goes through the Space's domain",
+          "zh": "在局域网外打开页面要经过 Space 的域名"
+        }
+      ],
+      "latest": {
+        "version": "0.1.0",
+        "tag": "v0.1.0",
+        "package": {
+          "url": "https://github.com/ericz-lab/lan-drop/releases/download/v0.1.0/lan-drop-0.1.0.spaceapp",
+          "sha256": "b3b4bbd04892603224c98a46650db19399b71f72ff4a54bc8334d2310d49513d"
+        },
+        "sourcePackage": {
+          "url": "https://github.com/ericz-lab/lan-drop/releases/download/v0.1.0/lan-drop-0.1.0-source.spaceapp",
+          "sha256": "c2d0b0cd6a532e1d1eef762d42b0ee4323d0098c4f9284354f20b118ca881c58"
+        },
+        "requires": {
+          "spaceApi": 1,
+          "bun": "1.3.0"
+        }
+      }
     }
   ]
 }
