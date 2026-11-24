@@ -319,11 +319,11 @@
         "version": "0.1.0",
         "tag": "v0.1.0",
         "package": {
-          "url": "https://github.com/ericz-lab/photo-play/releases/download/v0.1.0/photo-play-0.1.0.spaceapp",
+          "url": "https://bucket.ai-space.me/store/packages/photo-play/0.1.0/photo-play-0.1.0.spaceapp",
           "sha256": "8483d3bef2838d889669f57b8dcb135a04996c134cf8cf04b571f84b4afd8a7b"
         },
         "sourcePackage": {
-          "url": "https://github.com/ericz-lab/photo-play/releases/download/v0.1.0/photo-play-0.1.0-source.spaceapp",
+          "url": "https://bucket.ai-space.me/store/packages/photo-play/0.1.0/photo-play-0.1.0-source.spaceapp",
           "sha256": "f94ea802bb4c346da06fe497c3fa3fa341f19b337b3cc32b66284ee76e7960ad"
         },
         "requires": {
