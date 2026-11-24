@@ -22,15 +22,15 @@
     }
   ],
   "latest": {
-    "version": "0.1.0",
-    "tag": "v0.1.0",
+    "version": "0.2.0",
+    "tag": "v0.2.0",
     "package": {
-      "url": "https://bucket.ai-space.me/store/packages/photo-play/0.1.0/photo-play-0.1.0.spaceapp",
-      "sha256": "8483d3bef2838d889669f57b8dcb135a04996c134cf8cf04b571f84b4afd8a7b"
+      "url": "https://bucket.ai-space.me/store/packages/photo-play/0.2.0/photo-play-0.2.0.spaceapp",
+      "sha256": "e27192be72d8a1239dfa47e9f669c87f9781b7e0a75d68d3ce76b23c76ddb78d"
     },
     "sourcePackage": {
-      "url": "https://bucket.ai-space.me/store/packages/photo-play/0.1.0/photo-play-0.1.0-source.spaceapp",
-      "sha256": "f94ea802bb4c346da06fe497c3fa3fa341f19b337b3cc32b66284ee76e7960ad"
+      "url": "https://bucket.ai-space.me/store/packages/photo-play/0.2.0/photo-play-0.2.0-source.spaceapp",
+      "sha256": "9d3357d1b5ed3a06bb4284d2ae0b14ff344564e43726baf354ac458a53924c2b"
     },
     "requires": {
       "spaceApi": 1,
