@@ -18,11 +18,11 @@
     "version": "0.1.0",
     "tag": "v0.1.0",
     "package": {
-      "url": "https://github.com/ericz-lab/clock/releases/download/v0.1.0/clock-0.1.0.spaceapp",
+      "url": "https://bucket.ai-space.me/store/packages/clock/0.1.0/clock-0.1.0.spaceapp",
       "sha256": "500628321c5ecb2a1687c54a4e6504726f8243d14ef6619443984d072bd2cd51"
     },
     "sourcePackage": {
-      "url": "https://github.com/ericz-lab/clock/releases/download/v0.1.0/clock-0.1.0-source.spaceapp",
+      "url": "https://bucket.ai-space.me/store/packages/clock/0.1.0/clock-0.1.0-source.spaceapp",
       "sha256": "dd2f0067b46c253d347edfee5b9d00c17a018dad2474605614f3abeafd812a7f"
     },
     "requires": {
